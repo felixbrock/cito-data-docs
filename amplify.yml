@@ -3,13 +3,12 @@ frontend:
   phases:
     preBuild:
       commands:
-        - nvm install 16.14.0
-        - nvm use 16.14.0
         - npm install
     build:
       commands:
+        - nvm install 16.14.0
         - nvm use 16.14.0
-          - npm run build
+        - npm run build
   artifacts:
     baseDirectory: build
     files:
