@@ -24,7 +24,7 @@ GRANT IMPORTED PRIVILEGES ON DATABASE SNOWFLAKE TO ROLE CITODATAROLE;
 ## Set User Authentication
 
 ```sql
-ALTER USER CITODATA SET PASSWORD = '%sT-r0ng_pa-sSw0rD%';
+ALTER USER CITODATA SET PASSWORD = 'PlaceholderForStrongPassword';
 ```
 
 ## Create Processing Environment
@@ -50,3 +50,8 @@ GRANT SELECT ON FUTURE VIEWS IN DATABASE EXAMPLEDB TO ROLE CITODATAROLE;
 GRANT SELECT ON ALL MATERIALIZED VIEWS IN DATABASE EXAMPLEDB TO ROLE CITODATAROLE;
 GRANT SELECT ON FUTURE MATERIALIZED VIEWS IN DATABASE EXAMPLEDB TO ROLE CITODATAROLE
 ```
+## Connect to Snowflake in your Cito Data Web App
+1. Open the Integrations window in your Cito Data web app.
+2. Click on ‘Connect to Snowflake’.
+3. Enter the credentials you created in the previous step.
+4. Your credentials will automatically be saved and a connection to your Snowflake instance will be established.
