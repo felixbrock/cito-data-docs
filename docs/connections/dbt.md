@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# GitHub
+# dbt
 
 Cito Data seamlessly integrates with GitHub to read dbt meta-data. In order to connect to your dbt repository please follow the steps below:
 1. Open the Integrations window in your Cito Data web app.
