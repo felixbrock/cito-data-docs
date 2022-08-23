@@ -6,10 +6,11 @@ sidebar_position: 2
 
 **Great to meet you! Get [started now](https://citodata.com/pricing).**
 
-We are happy to help in case of any questions! Please send us an email at felix@citodata.com.
+We are happy to help in case of any questions! Please send an email to felix@citodata.com.
 
-Easily connect to your tool stack via our pre-built [dbt](../connections/dbt), [Snowflake](../connections/snowflake), [Slack](../connections/slack) and [Looker](../connections/looker) integrations.
+Easily connect to your tool stack using our no-code [Github](../connections/github), [Snowflake](../connections/snowflake), [Slack](../connections/slack) and  [BI tool (Mode, Tableau)](../connections/bi-tools) integrations.
 
 ![Cito Data Integrations](./img/integrations.png)
 
-Enjoy distributed data observability powered by column-level lineage.
+Enjoy powerful, actionable and flexible data observability!
+Please note that Cito is currently in beta.
