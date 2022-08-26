@@ -10,7 +10,7 @@ Cito seamlessly integrates with Snowflake to detect anomalies in your data and t
 
 ```sql
 CREATE ROLE CITOROLE;
-CREATE USER CITO DEFAULT_ROLE = "CITOROLE" MUST_CHANGE_PASSWORD = FALSE;
+CREATE USER CITO DEFAULT_ROLE = CITOROLE MUST_CHANGE_PASSWORD = FALSE;
 GRANT ROLE CITOROLE TO USER CITO;
 ```
 
@@ -40,19 +40,19 @@ GRANT ALL ON DATABASE CITO TO CITOROLE;
 
 ```sql
 GRANT USAGE ON WAREHOUSE <example_warehouse> TO ROLE CITOROLE;
-GRANT USAGE ON DATABASE EXAMPLEDB TO ROLE CITOROLE;
-GRANT USAGE ON ALL SCHEMAS IN DATABASE EXAMPLEDB TO ROLE CITOROLE;
-GRANT USAGE ON FUTURE SCHEMAS IN DATABASE EXAMPLEDB TO ROLE CITOROLE;
-GRANT SELECT ON ALL TABLES IN DATABASE EXAMPLEDB TO ROLE CITOROLE;
-GRANT SELECT ON FUTURE TABLES IN DATABASE EXAMPLEDB TO ROLE CITOROLE;
-GRANT SELECT ON ALL VIEWS IN DATABASE EXAMPLEDB TO ROLE CITOROLE;
-GRANT SELECT ON FUTURE VIEWS IN DATABASE EXAMPLEDB TO ROLE CITOROLE;
-GRANT SELECT ON ALL MATERIALIZED VIEWS IN DATABASE EXAMPLEDB TO ROLE CITOROLE;
-GRANT SELECT ON FUTURE MATERIALIZED VIEWS IN DATABASE EXAMPLEDB TO ROLE CITOROLE;
+GRANT USAGE ON DATABASE <example_database> TO ROLE CITOROLE;
+GRANT USAGE ON ALL SCHEMAS IN DATABASE <example_database> TO ROLE CITOROLE;
+GRANT USAGE ON FUTURE SCHEMAS IN DATABASE <example_database> TO ROLE CITOROLE;
+GRANT SELECT ON ALL TABLES IN DATABASE <example_database> TO ROLE CITOROLE;
+GRANT SELECT ON FUTURE TABLES IN DATABASE <example_database> TO ROLE CITOROLE;
+GRANT SELECT ON ALL VIEWS IN DATABASE <example_database> TO ROLE CITOROLE;
+GRANT SELECT ON FUTURE VIEWS IN DATABASE <example_database> TO ROLE CITOROLE;
+GRANT SELECT ON ALL MATERIALIZED VIEWS IN DATABASE <example_database> TO ROLE CITOROLE;
+GRANT SELECT ON FUTURE MATERIALIZED VIEWS IN DATABASE <example_database> TO ROLE CITOROLE;
 ```
 ## Connect to Snowflake in your Cito Web App
 1. Open the Integrations window in your Cito Web App.
 2. Open The Snowflake tab an enter the required information.
 3. Please enter the Account Id of your Snowflake. You can find the corresponding information within your Snowflake instance via 'Admin' -> 'Accounts'. Please select the account from the listed options and combine the 'Account' field value (the actual Account Id) of the row with your Organization Id which you can find on top of the page. Please enter the combination of '&#60;Organization-Id&#62;-&#60;Account-Id&#62;' into the 'Snowflake Account Id' field in your Cito Web App.
 3. Enter the credentials (username and password) you created for Cito in the previous steps.
-4. After clicking on 'Save' a connection to your Snowflake instance will be established.
+4. After clicking on 'Save' a connection to your Snowflake instance will be established and resources in the Cito database will be created.
