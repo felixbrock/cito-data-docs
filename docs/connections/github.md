@@ -6,6 +6,8 @@ sidebar_position: 1
 
 You want to setup your Snowflake integration beforehand, so we can provide you with data lineage all the way down to your BI tools.
 
+Compatibility: dbt version 0.19.0 and above
+
 Cito seamlessly integrates with GitHub to read dbt metadata. In order to connect to your dbt repository please follow the steps below:
 1. Open the Integrations window in your Cito web app.
 2. Open the Github tab and click on ‘Install Cito Data Github App’. A GitHub OAuth window appears to grant Cito read access to dbt metadata. You may need to log in.
