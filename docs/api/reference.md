@@ -18,7 +18,7 @@ The login context of https://auth.citodata.com will appear, which you have to us
 
 ## Endpoints
 
-The following endpoints are available via https://ax4h0t5r59.execute-api.eu-central-1.amazonaws.com/production/api/v1/:
+The following endpoints are available via https://api.citodata.com:
 
 **GET** /custom-test-suite/:customTestSuiteId
 
