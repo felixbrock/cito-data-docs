@@ -65,7 +65,11 @@ The following endpoints are available via https://ax4h0t5r59.execute-api.eu-cent
   "id": "string (The object's id)",
   "activated": "boolean (optional; state that defines if a test is activated (and executed))",
   "threshold": "number (optional; to make a model more or less sensitive against anomalies)",
-  "frequency": "number (optional; the frequency of test execution (1, 3, 6, 12 or 24) [in h])"
+  "frequency": "number (optional; the frequency of test execution (1, 3, 6, 12 or 24) [in h])",
+  "name": "string (optional; the name of the custom test)",
+  "description": "string (optional; the description of the custom test)",
+  "sqlLogic": "string (optional; the underlying test sql logic that is executed)",
+  "targetResourceIds": "string[] (optional; can be an empty array; The ids of columns that are referenced/used in this test)"
 }
 ```
 - **Returns**: Id of updated custom test suite object under status code 200
