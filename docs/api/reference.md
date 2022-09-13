@@ -60,6 +60,7 @@ The following endpoints are available via https://api.citodata.com:
 - **URL Parameters**:
   - testSuiteId (required; The id of the test suite id to update)
 - **Body Parameters** (JSON):
+
 ```json
 {
   "id": "string (The object's id)",
@@ -72,6 +73,7 @@ The following endpoints are available via https://api.citodata.com:
   "targetResourceIds": "string[] (optional; can be an empty array; The ids of columns that are referenced/used in this test)"
 }
 ```
+
 - **Returns**: Id of updated custom test suite object under status code 200
 
 **GET** /test-suite/:testSuiteId
@@ -89,40 +91,48 @@ The following endpoints are available via https://api.citodata.com:
   - activated (optional; the activation status of a test (true or false))
 - **Returns**: Test suite objects under status code 200
 
-**POST** /test-suite
+**POST** /test-suites
 
 - **Description**: Creates a test suite object that is describing a column-level test (e.g. Distribution Test)
 - **Body Parameters** (JSON):
 
 ```json
 {
-  "activated": "boolean (state that defines if a test is activated (and executed))",
-  "type": "string (['ColumnFreshness', 'ColumnCardinality', 'ColumnUniqueness', 'ColumnNullness' or 'ColumnDistribution'])",
-  "threshold": "number (to make a model more or less sensitive against anomalies)",
-  "executionFrequency": "number (the frequency of test execution (1, 3, 6, 12 or 24) [in h])",
-  "databaseName": "string (the name of the test target's database)",
-  "schemaName": "string (the name of the test target's schema name)",
-  "materializationName": "string (the test target's name or the name test target's (column) materialization)",
-  "materializationType": "string ('Table' | 'View')",
-  "columnName": "string (optional; the test target's name)"
+  "createTestSuiteObjects": [
+    {
+      "activated": "boolean (state that defines if a test is activated (and executed))",
+      "type": "string (['ColumnFreshness', 'ColumnCardinality', 'ColumnUniqueness', 'ColumnNullness' or 'ColumnDistribution'])",
+      "threshold": "number (to make a model more or less sensitive against anomalies)",
+      "executionFrequency": "number (the frequency of test execution (1, 3, 6, 12 or 24) [in h])",
+      "databaseName": "string (the name of the test target's database)",
+      "schemaName": "string (the name of the test target's schema name)",
+      "materializationName": "string (the test target's name or the name test target's (column) materialization)",
+      "materializationType": "string ('Table' | 'View')",
+      "columnName": "string (optional; the test target's name)"
+    },
+    {}
+  ]
 }
 ```
 
 - **Returns**: Test suite object under status code 201
 
-**PATCH** /test-suite/:testSuiteId
+**PATCH** /test-suites
 
 - **Description**: Updates a test suite object that is describing a column-level test (e.g. Distribution Test)
-- **URL Parameters**:
-  - testSuiteId (required; The id of the test suite id to update)
 - **Body Parameters** (JSON):
 
 ```json
 {
-  "id": "string (The object's id)",
-  "activated": "boolean (optional; state that defines if a test is activated (and executed))",
-  "threshold": "number (optional; to make a model more or less sensitive against anomalies)",
-  "frequency": "number (optional; the frequency of test execution (1, 3, 6, 12 or 24) [in h])"
+  "updateTestSuiteObjects": [
+    {
+      "id": "string (The object's id)",
+      "activated": "boolean (optional; state that defines if a test is activated (and executed))",
+      "threshold": "number (optional; to make a model more or less sensitive against anomalies)",
+      "frequency": "number (optional; the frequency of test execution (1, 3, 6, 12 or 24) [in h])"
+    },
+    {}
+  ]
 }
 ```
 
