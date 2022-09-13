@@ -98,7 +98,7 @@ The following endpoints are available via https://api.citodata.com:
 
 ```json
 {
-  "createTestSuiteObjects": [
+  "createObjects": [
     {
       "activated": "boolean (state that defines if a test is activated (and executed))",
       "type": "string (['ColumnFreshness', 'ColumnCardinality', 'ColumnUniqueness', 'ColumnNullness' or 'ColumnDistribution'])",
@@ -124,7 +124,7 @@ The following endpoints are available via https://api.citodata.com:
 
 ```json
 {
-  "updateTestSuiteObjects": [
+  "updateObjects": [
     {
       "id": "string (The object's id)",
       "activated": "boolean (optional; state that defines if a test is activated (and executed))",
