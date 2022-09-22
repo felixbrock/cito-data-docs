@@ -53,7 +53,7 @@ GRANT SELECT ON FUTURE MATERIALIZED VIEWS IN DATABASE <example_database> TO ROLE
 ## Connect to Snowflake in your Cito Web App
 1. Open the Integrations window in your Cito Web App.
 2. Open The Snowflake tab an enter the required information.
-3. Please enter the Account Id of your Snowflake. You can find the corresponding information within your Snowflake instance via 'Admin' -> 'Accounts'. Please select the account from the listed options and combine the 'Account' field value (the actual Account Id) of the row with your Organization Id which you can find on top of the page. Please enter the combination of '&#60;Organization-Id&#62;-&#60;Account-Id&#62;' into the 'Snowflake Account Id' field in your Cito Web App.
+3. Please enter the Account Id of your Snowflake. You can find the corresponding information within your Snowflake instance via 'Admin' -> 'Accounts'. Please select the account from the listed options and copy the account name (&#60;organization-id&#62;-&#60;account-id&#62;) from the account URL ('https://&#60;organization-id&#62;-&#60;account-id&#62;.snowflakecomputing.com') which you can access when clicking the Copy button of 'Account' field.  Please enter the account name into the 'Snowflake Account Id' field in your Cito Web App.
 3. Enter username (name of the user) password and the name of the warehouse you want to monitor from your earlier Snowflake setup.
 4. (Optional) Select your BI layer tool from the 'BI Layer tool' dropdown.
 5. After clicking on 'Save' a connection to your Snowflake instance will be established and resources in the Cito database will be created.
