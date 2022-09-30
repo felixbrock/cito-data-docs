@@ -18,7 +18,7 @@ The login context of https://auth.citodata.com will appear, which you have to us
 
 ## Endpoints
 
-The following endpoints are available via https://api.citodata.com:
+The following endpoints are available via https://api.citodata.com/api/v1:
 
 **GET** /custom-test-suite/:customTestSuiteId
 
@@ -93,7 +93,7 @@ The following endpoints are available via https://api.citodata.com:
 
 **POST** /test-suites
 
-- **Description**: Creates a test suite object that is describing a column-level test (e.g. Distribution Test)
+- **Description**: Creates test suite objects that are describing column-level or materialization-level tests
 - **Body Parameters** (JSON):
 
 ```json
@@ -108,7 +108,8 @@ The following endpoints are available via https://api.citodata.com:
       "schemaName": "string (the name of the test target's schema name)",
       "materializationName": "string (the test target's name or the name test target's (column) materialization)",
       "materializationType": "string ('Table' | 'View')",
-      "columnName": "string (optional; the test target's name)"
+      "columnName": "string (optional; the test target's name)",
+      "targetResourceId": "string (id of the test's target column or materialization)"
     },
     {}
   ]
@@ -137,3 +138,57 @@ The following endpoints are available via https://api.citodata.com:
 ```
 
 - **Returns**: Id of updated test suite object under status code 200
+
+**POST** /test-suites
+
+- **Description**: Creates test suite objects that are describing column-level or materialization-level tests
+- **Body Parameters** (JSON):
+
+```json
+{
+  "createObjects": [
+    {
+      "activated": "boolean (state that defines if a test is activated (and executed))",
+      "type": "string (['ColumnFreshness', 'ColumnCardinality', 'ColumnUniqueness', 'ColumnNullness' or 'ColumnDistribution'])",
+      "threshold": "number (to make a model more or less sensitive against anomalies)",
+      "executionFrequency": "number (the frequency of test execution (1, 3, 6, 12 or 24) [in h])",
+      "databaseName": "string (the name of the test target's database)",
+      "schemaName": "string (the name of the test target's schema name)",
+      "materializationName": "string (the test target's name or the name test target's (column) materialization)",
+      "materializationType": "string ('Table' | 'View')",
+      "columnName": "string (optional; the test target's name)",
+      "targetResourceId": "string (id of the test's target column or materialization)"
+    },
+    {}
+  ]
+}
+```
+
+- **Returns**: Test suite object under status code 201
+
+**POST** /test-suite/execute
+
+- **Description**: Executes a given test
+- **Body Parameters** (JSON):
+
+```json
+{
+  "createObjects": [
+    {
+      "activated": "boolean (state that defines if a test is activated (and executed))",
+      "type": "string (['ColumnFreshness', 'ColumnCardinality', 'ColumnUniqueness', 'ColumnNullness' or 'ColumnDistribution'])",
+      "threshold": "number (to make a model more or less sensitive against anomalies)",
+      "executionFrequency": "number (the frequency of test execution (1, 3, 6, 12 or 24) [in h])",
+      "databaseName": "string (the name of the test target's database)",
+      "schemaName": "string (the name of the test target's schema name)",
+      "materializationName": "string (the test target's name or the name test target's (column) materialization)",
+      "materializationType": "string ('Table' | 'View')",
+      "columnName": "string (optional; the test target's name)",
+      "targetResourceId": "string (id of the test's target column or materialization)"
+    },
+    {}
+  ]
+}
+```
+
+- **Returns**: Test suite object under status code 201
