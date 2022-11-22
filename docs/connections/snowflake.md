@@ -34,6 +34,7 @@ Create a new database to allow Cito to process the requested data within Snowfla
 CREATE DATABASE CITO;
 GRANT ALL ON DATABASE CITO TO CITOROLE;
 ```
+**Note:** _To work with the `CITO` database from the Snwoflake UI (e.g. by running queries from 'Worksheets') you either need to use the `CITO` user, grant the `CITOROLE` to another executing user or explicitly granting another role access._
 
 ## Define Access Rights for Cito Data Role
 (Repeat this step for all databases you want to enable anomaly detection for)
