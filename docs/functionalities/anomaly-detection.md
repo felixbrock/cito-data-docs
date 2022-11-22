@@ -24,7 +24,7 @@ Cito supports nine test types out-of-the-box:
 | **Row Count** | Table, View |	Regularly refreshed or incrementally updated tables/views	| Tracks the number of rows in a table/view	| The number of rows in this table is significantly lower than expected
 | **Column Count** |	Table, View	| Tables/views that you expect to have a stable number of columns	| Tracks the number of columns in a table/view | The number of columns in this table is significantly higher than expected
 | **Table Freshness** | Table, View	| Regularly updated tables/views | Tracks time elapsed since the last time a table/view was updated |	More time has elapsed since this table was last updated than expected
-| **Schema Change**	| Table, View	| Important tables/views with upstream stakeholders who could make unnanounced schema changes | Monitors the schema of a table/view |	The schema of this table has changed
+| **Schema Change**	| Table, View	| Important tables/views with upstream stakeholders who could make unnanounced schema changes | Monitors the schema of a table/view | The schema of this table has changed
 
 
 You can also set up **Custom SQL tests** using our API to monitor anything that is not natively supported.
