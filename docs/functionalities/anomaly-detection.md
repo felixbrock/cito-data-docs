@@ -16,15 +16,15 @@ Cito supports nine test types out-of-the-box:
 
 | **Test Type** | **Valid Targets** | **Good Fits** | **Description** | **Example Alert** |
 | :--- | :--- | :--- | :--- | :--- |
-| **Column freshness**	| Column |	Time stamp columns	| Tracks the time elapsed since the most recent value of a time column was updated | More time has elapsed since this column was last updated than expected
+| **Column Freshness**	| Column |	Timestamp columns	| Tracks the time elapsed since the most recent value of a time column was updated | More time has elapsed since this column was last updated than expected
 | **Cardinality**	| Column |	Enums, dimensions, categories	| Tracks the number of unique values in a column | The cardinality of this column is significantly lower than expected
 | **Nullness** | Column	| IDs, any column you expect not to be null |	Tracks the nullness of a column defined as `(# null values / # total values)`. Ranges from `0` to `1`	| The nullness of this column is significantly higher than expected
 | **Uniqueness** |	Column	| Primary keys, IDs	| Tracks the uniqueness of a column defined as `(# unique values / # total values)`. Ranges from `0` to `1`	| The uniqueness of this column is significantly lower than expected
-| **Distribution** |	Numeric column | Business KPIs, input features into machine learning models	| Tracks five categories of summary statistics: <ul><li>Center: mean, median</li><li>Extent: min, max, range</li><li>Cut points: upper 75th percentile, lower 25th percentile</li><li>Spread: standard deviation, interquartile range (difference between 75th and 25th percentile)</li><li>Distribution: skew, kurtosis	| The mean of this column is significantly higher than expected</li></ul>
-| **Row count** | Table, View |	Regularly refreshed or incrementally updated tables/views	| Tracks the number of rows in a table/view	| The number of rows in this table is significantly lower than expected
-| **Column count** |	Table, View	| Tables/views that you expect to have a stable number of columns	| Tracks the number of columns in a table/view | The number of columns in this table is significantly higher than expected
-| **Table freshness** | Table, View	| Regularly updated tables/views | Tracks time elapsed since the last time a table/view was updated |	More time has elapsed since this table was last updated than expected
-| **Schema change**	| Table, View	| Important tables/views with upstream stakeholders who could make unnanounced schema changes | Monitors the schema of a table/view |	The schema of this table has changed
+| **Distribution** |	Numeric column | Business KPIs, input features into machine learning models	| Tracks five categories of summary statistics: <ul><li>Center: mean, median</li><li>Extent: min, max, range</li><li>Cut points: upper 75th percentile, lower 25th percentile</li><li>Spread: standard deviation, interquartile range (difference between 75th and 25th percentile)</li><li>Distribution: skew, kurtosis </li></ul>	| The mean of this column is significantly higher than expected
+| **Row Count** | Table, View |	Regularly refreshed or incrementally updated tables/views	| Tracks the number of rows in a table/view	| The number of rows in this table is significantly lower than expected
+| **Column Count** |	Table, View	| Tables/views that you expect to have a stable number of columns	| Tracks the number of columns in a table/view | The number of columns in this table is significantly higher than expected
+| **Table Freshness** | Table, View	| Regularly updated tables/views | Tracks time elapsed since the last time a table/view was updated |	More time has elapsed since this table was last updated than expected
+| **Schema Change**	| Table, View	| Important tables/views with upstream stakeholders who could make unnanounced schema changes | Monitors the schema of a table/view |	The schema of this table has changed
 
 
 You can also set up **Custom SQL tests** using our API to monitor anything that is not natively supported.
