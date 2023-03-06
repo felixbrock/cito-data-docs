@@ -13,4 +13,3 @@ Easily connect to your tool stack using our no-code [Github](../connections/gith
 ![Cito Data Integrations](./img/integrations.png)
 
 Enjoy powerful, actionable and flexible data observability!
-Please note that Cito is currently in beta.
