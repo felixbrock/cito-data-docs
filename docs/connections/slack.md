@@ -6,6 +6,12 @@ sidebar_position: 3
 
 You want to setup your Github integration beforehand, since we need to check for anomalies in your data before sending you anomaly alerts.
 
+<div style={{textAlign: 'center'}}>
+
+![image](./img/slack-alert.png)
+
+</div>
+
 Cito alerts you and provides you with essential information to act fast in case of an anomaly. For this purpose, the solution seamlessly integrates with Slack. In order to connect, please follow the steps below:
 
 1. Open the Integrations window in your Cito web app.
